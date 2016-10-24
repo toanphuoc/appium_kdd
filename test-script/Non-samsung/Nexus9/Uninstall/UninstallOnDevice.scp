@@ -1,0 +1,29 @@
+TEST_NAME	Remove LANrev Apps manually from device
+TEST_ID	122
+
+<DESC>	Deactive device administrator LANrev Apps
+DEVICE_LAUNCH_App	Nexus9	com.android.settings	DeviceAdminSettings
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@resource-id='com.android.settings:id/name' and @text='LANrev Apps']	30
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='com.android.settings:id/name' and @text='LANrev Apps']
+DEVICE_WAIT_For	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']	30
+DEVICE_Click	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']
+
+<DESC>	Uninstall LANrev Apps
+DEVICE_ANDROID_START_Activity	com.android.settings	.ManageApplications
+WAIT	5
+DEVICE_Scroll	LANrev Apps
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+<DESC>	Uninstall Install LANrev Apps Sentinel
+DEVICE_Scroll	LANrev Apps Sentinel
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps Sentinel']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+DEVICE_Quite

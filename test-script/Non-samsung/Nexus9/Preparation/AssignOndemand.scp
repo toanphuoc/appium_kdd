@@ -1,0 +1,46 @@
+TEST_NAME	Assign On-demand Applications
+TEST_ID	3121
+
+<DESC>	Extend On-demand in Enterprise Application
+CLICK	auto_group.png
+WAIT	1
+KEY	<#Key>RIGHT	3
+WAIT	1
+
+<DESC>	Select Enterprise Application
+CLICK	enterprise_app.PNG
+WAIT	1
+ 
+CLICK	searchAgent.png
+WAIT	1
+KEY	<#ApplicationName>
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+WAIT	1
+<DESC>	Drag and drop
+DRAG_Drop	appSelected.png	on_demand.png
+
+<DESC>	Click button 'OK'
+WAIT_For	ok.png	30
+CLICK	ok.png
+
+<DESC>	Check result after assign
+WAIT	1
+CLICK	on_demand.png
+WAIT	1
+CLICK	searchAgent.png
+WAIT	1
+KEY	<#ApplicationName>
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+WAIT	1
+VERIFY_Image	appSelected.png
+WAIT	1

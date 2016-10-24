@@ -1,0 +1,12 @@
+SUITE_NAME	Sanity LANrev App on Nexus 9
+
+Enroll/InstallLANrevAppsThenEnrollForNon-SAMSUNGDeviceVendor.scp
+Uninstall/UninstallOnDevice.scp
+
+Enroll/InstallLANrevAppsWithSpecialCharacterPasscode.scp
+AboutTab/CheckLANrevAppInfor.scp
+
+ApplicationsTab/CheckApplicationsDisplay.scp
+
+Uninstall/UninstallAppFromAdmin.scp
+

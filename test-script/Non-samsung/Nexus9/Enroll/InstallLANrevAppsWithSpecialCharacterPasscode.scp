@@ -1,0 +1,40 @@
+TEST_NAME	Set Passcode using special characters for locating device
+TEST_ID	123
+
+<DESC>	Open File Manager
+DEVICE_LAUNCH_App	Nexus9	com.rhmsoft.fm.hd	.FileManagerHD
+
+<DESC>	Open LANrev Apps
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@text='LANrev Apps 3.0b2 (v5058).apk']	60
+DEVICE_Click	xpath=//android.widget.TextView[@text='LANrev Apps 3.0b2 (v5058).apk']
+WAIT	3
+DEVICE_Click	id=com.android.packageinstaller:id/ok_button
+DEVICE_WAIT_For	id=com.android.packageinstaller:id/launch_button	90
+DEVICE_Click	id=com.android.packageinstaller:id/launch_button
+WAIT	5
+
+<DESC>	Enter Server Address
+DEVICE_SEND_Keys	id=com.heatsoftware.android.lanrevapps:id/enroll_device_server_address_input	mdm33.s3corp.com.vn
+WAIT	2
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/enroll_device_save_button
+
+<DESC>	Enter passcode
+DEVICE_WAIT_For	id=com.heatsoftware.android.lanrevapps:id/passcode_input1	60
+DEVICE_SEND_Keys	id=com.heatsoftware.android.lanrevapps:id/passcode_input1	!@#$
+WAIT	2
+DEVICE_SEND_Keys	id=com.heatsoftware.android.lanrevapps:id/passcode_input2	!@#$
+WAIT	2
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/passcode_save_button
+
+<DESC>	Install LANrev Apps Sentinel
+DEVICE_WAIT_For	id=com.android.packageinstaller:id/ok_button	60
+DEVICE_Click	id=com.android.packageinstaller:id/ok_button
+DEVICE_WAIT_For	id=com.android.packageinstaller:id/done_button	60
+DEVICE_Click	id=com.android.packageinstaller:id/done_button
+
+<DESC>	Activi device administrator
+DEVICE_WAIT_For	id=com.android.settings:id/action_button	60
+DEVICE_Click	id=com.android.settings:id/action_button
+WAIT	5
+
+DEVICE_Quite

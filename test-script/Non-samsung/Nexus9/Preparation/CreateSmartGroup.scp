@@ -1,0 +1,41 @@
+TEST_NAME	Create Smart Group Policy
+TEST_ID	1111
+
+CALL_Script	Non-samsung/Nexus9/Common/OpenLANrevAdmin.scp
+
+<DESC>	Check Survival of Policies
+CLICK	policies.png
+WAIT	1
+CLICK	searchAgent.png
+WAIT	1
+KEY	Auto Group
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+WAIT	1
+BREAK_Progress	appSelected.png
+
+<DESC>	Create New Policy
+RIGHT_Click	600	300
+WAIT	2
+KEY	<#Key>DOWN	5
+WAIT	1
+KEY	<#Key>ENTER
+WAIT_For	btCancel.PNG	30
+
+<DESC>	Enter Policy Name
+KEY	Auto Group
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+PASTE	Mobile Device Serial Number
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+PASTE	<#SerialNumber>
+WAIT	1
+CLICK	ok.png
+WAIT_ForVanish	ok.png	30

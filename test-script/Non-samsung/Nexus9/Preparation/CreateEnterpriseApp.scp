@@ -1,0 +1,51 @@
+TEST_NAME	Create Enterprise Applications
+TEST_ID	1212
+
+CLICK	enterprise_app.png
+WAIT	1
+
+CLICK	searchAgent.png
+WAIT	1
+KEY	<#ApplicationName>
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+BREAK_Progress	appSelected.png
+
+<DESC>	Create new enterprise application
+RIGHT_Click	600	300
+WAIT	2
+KEY	<#Key>DOWN	5
+WAIT	1
+KEY	<#Key>ENTER
+WAIT_For	btCancel.PNG	30
+
+<DESC>	Enter Application Name
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>ENTER
+WAIT_For	open.png	20
+WAIT	2
+PASTE	<#ApplicationUrl>
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	5
+
+<DESC>	Enter short name
+KEY	<#Key>TAB	3
+WAIT	1
+KEY	<#ShortDes>
+WAIT	1
+<DESC>	Enter long description
+KEY	<#Key>TAB
+WAIT	1
+KEY	<#LongDes>
+WAIT	1
+
+<DESC>	Click button 'OK'
+CLICK	ok.png
+WAIT	3
+

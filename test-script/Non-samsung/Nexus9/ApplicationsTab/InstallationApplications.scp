@@ -1,0 +1,29 @@
+TEST_NAME	Install applications
+TEST_ID	121
+
+<DESC>	Open LANrev App
+CALL_Script	Non-samsung/Nexus9/Common/OpenLANrevApp.scp
+
+<DESC>	Check application display
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title' and contains(@text, 'SpeedCar')]	60
+
+DEVICE_Click	xpath=//android.widget.LinearLayout[android.widget.TextView[@text='SpeedCar']]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView
+
+DEVICE_WAIT_For	id=android:id/button1	20
+DEVICE_Click	id=android:id/button1
+
+DEVICE_WAIT_For	id=com.android.packageinstaller:id/ok_button	90
+DEVICE_Click	id=com.android.packageinstaller:id/ok_button
+
+DEVICE_WAIT_ForVanish	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title' and contains(@text, 'SpeedCar')]	30
+
+<DESC>	Check application is installed
+DEVICE_APP_IsInstalled	Game.NDK
+
+<DESC>	Remove Speed Car app
+DEVICE_Uninstall	Game.NDK
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title' and contains(@text, 'SpeedCar')]	60
+
+
+<DESC>	Close app
+DEVICE_Quite

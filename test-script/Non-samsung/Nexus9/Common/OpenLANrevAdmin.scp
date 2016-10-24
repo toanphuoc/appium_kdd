@@ -1,0 +1,34 @@
+TEST_NAME	OPen Admin
+TEST_ID	232
+
+<DESC>	Open LANrev Admin
+OPEN_App	C:\Program Files\Pole Position Software\LANrevAdmin\LANrev Admin.exe
+WAIT_For	quite.png	30
+
+<DESC>	Enter server address
+KEY	<#Key>TAB	4
+KEY	<#UrlServer>
+WAIT	1
+
+<DESC>	Enter password
+KEY	<#Key>TAB	4
+KEY	admin
+WAIT	1
+
+<DESC>	Press Enter
+KEY	<#Key>ENTER
+
+<DESC>	Wait for main windows LANrev Admin appear
+WAIT_For	open.png	20
+
+<DESC>	Open Mobile Device Management
+KEY_Combine	<#Key>CTRL+SHIFT+M
+WAIT_For	mobile_devices.png	30
+DOUBLE_Click	mobile_devices.png
+WAIT	2
+KEY	<#Key>HOME
+WAIT	1.5
+KEY	<#Key>LEFT
+WAIT	1.5
+KEY	<#Key>RIGHT	2
+WAIT	1.5

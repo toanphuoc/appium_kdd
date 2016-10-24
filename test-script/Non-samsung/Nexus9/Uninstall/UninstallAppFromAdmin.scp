@@ -1,0 +1,96 @@
+TEST_NAME	Uninstall LANrev Apps from Admin
+TEST_ID	1212
+
+<DESC>	Open LANrev Apps
+CALL_Script	Non-samsung/Nexus9/Common/OpenLANrevApp.scp
+
+<DESC>	Open LANrev Admin
+CALL_Script	Non-samsung/Nexus9/Common/SelectDevice.scp
+
+<DESC>	Uninstall LANrev Apps Sentinels
+CLICK	applications.PNG
+WAIT	1
+
+CLICK	searchAgent.png
+WAIT	1.5
+KEY	LANrev Apps Sentinel
+WAIT	1.5
+KEY	<#Key>ENTER
+WAIT	1.5
+KEY	<#Key>TAB	2
+WAIT	1.5
+KEY	<#Key>DOWN
+WAIT	1.5
+WAIT_For	appSelected.png	10
+WAIT	1.5
+RIGHT_Click	appSelected.png
+WAIT	1
+KEY	d
+WAIT	1
+KEY	d
+WAIT	1
+KEY	<#Key>ENTER
+WAIT_For	btCancel.PNG	10
+KEY	<#Key>ENTER
+WAIT	2
+
+<DESC>	Confirm on device
+DEVICE_ANDROID_OPEN_Notification
+
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@text='Uninstall LANrev Apps Sentinel']	20
+DEVICE_Click	xpath=//android.widget.TextView[@text='Uninstall LANrev Apps Sentinel']
+
+DEVICE_WAIT_For	id=android:id/button1	30
+DEVICE_Click	id=android:id/button1
+
+WAIT	2
+DEVICE_APP_IsInstalled	com.heatsoftware.android.lanrevapps.sentinel	false
+
+<DESC>	Wait LANrev Apps Sentinel on admin vanish
+WAIT_ForVanish	appSelected.png	90
+
+<DESC>	Uninstall LANrev Apps
+KEY	<#Key>TAB
+WAIT	1
+KEY_Combine	<#Key>CTRL+a
+WAIT	1
+KEY	LANrev Apps
+WAIT	1.5
+KEY	<#Key>ENTER
+WAIT	1.5
+KEY	<#Key>TAB	2
+WAIT	1.5
+KEY	<#Key>DOWN
+WAIT	1.5
+WAIT_For	appSelected.png	10
+WAIT	1.5
+RIGHT_Click	appSelected.png
+WAIT	1
+KEY	d
+WAIT	1
+KEY	d
+WAIT	1
+KEY	<#Key>ENTER
+WAIT_For	btCancel.PNG	10
+KEY	<#Key>ENTER
+WAIT	2
+
+<DESC>	Confirm on device
+DEVICE_ANDROID_OPEN_Notification
+
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@text='LANrev Apps wants you to uninstall LANrev Apps']	20
+DEVICE_Click	xpath=//android.widget.TextView[@text='LANrev Apps wants you to uninstall LANrev Apps']
+
+DEVICE_WAIT_For	id=android:id/button1	30
+DEVICE_Click	id=android:id/button1
+
+WAIT	2
+DEVICE_APP_IsInstalled	com.heatsoftware.android.lanrevapps	false
+
+<DESC>	Wait LANrev Apps on admin vanish
+WAIT_ForVanish	appSelected.png	90
+
+DEVICE_Quite
+
+<DESC>	Close App
+CALL_Script	Non-samsung/Nexus9/Common/CloseLANrevAdmin.scp

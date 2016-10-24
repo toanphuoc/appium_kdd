@@ -1,0 +1,4 @@
+TEST_NAME	Open LANrev Apps
+TEST_ID	121
+
+DEVICE_LAUNCH_App	Nexus9	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity

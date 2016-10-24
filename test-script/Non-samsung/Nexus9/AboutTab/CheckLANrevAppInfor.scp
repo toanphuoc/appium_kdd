@@ -1,0 +1,17 @@
+TEST_NAME	Check MDM Server and App version
+TEST_ID	23423
+
+<DESC>	Open LANrev App
+CALL_Script	Non-samsung/Nexus9/Common/OpenLANrevApp.scp
+
+<DESC>	Click About tab
+DEVICE_Click	xpath=//android.widget.CheckedTextView[@resource-id='com.heatsoftware.android.lanrevapps:id/design_menu_item_text' and @text='About']
+
+DEVICE_WAIT_For	xpath=//android.view.View[@content-desc='HEAT Software']	30
+DEVICE_VERIFY_Element	xpath=//android.view.View[@content-desc='Version 3.0b2 (5058)']
+DEVICE_VERIFY_Element	xpath=//android.view.View[contains(@content-desc, 'mdm33.s3corp.com.vn')]
+DEVICE_VERIFY_Element	xpath=//android.view.View[contains(@content-desc, 'B4CEF6079441')]
+DEVICE_VERIFY_Element	xpath=//android.view.View[contains(@content-desc, '© 2011–2016') and contains(@content-desc, '© 2011–2016 FrontRange Solutions Inc. All rights reserved.')]
+
+<DESC>	Close LANrev Apps
+DEVICE_Quite

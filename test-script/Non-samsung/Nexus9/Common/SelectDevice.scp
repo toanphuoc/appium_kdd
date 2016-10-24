@@ -1,0 +1,48 @@
+TEST_NAME	Open LANrev Admin and Select device
+TEST_ID	123
+
+<DESC>	Open LANrev Admin
+OPEN_App	C:\Program Files\Pole Position Software\LANrevAdmin\LANrev Admin.exe
+WAIT_For	quite.png	30
+
+<DESC>	Enter server address
+KEY	<#Key>TAB	4
+KEY	<#UrlServer>
+WAIT	1
+
+<DESC>	Enter password
+KEY	<#Key>TAB	4
+KEY	admin
+WAIT	1
+
+<DESC>	Press Enter
+KEY	<#Key>ENTER
+
+<DESC>	Wait for main windows LANrev Admin appear
+WAIT_For	open.png	20
+
+<DESC>	Open Mobile Device Management
+KEY_Combine	<#Key>CTRL+SHIFT+M
+WAIT_For	mobile_devices.png	30
+KEY	<#Key>HOME
+WAIT	1.5
+KEY	<#Key>LEFT
+WAIT	1.5
+KEY	<#Key>RIGHT	2
+WAIT	1.5
+
+<DESC>	Select mobile device
+CLICK	searchAgent.png
+WAIT	1.5
+KEY	<#SerialNumber>
+WAIT	1.5
+KEY	<#Key>ENTER
+WAIT	1.5
+KEY	<#Key>TAB	2
+WAIT	1.5
+KEY	<#Key>DOWN
+WAIT	1.5
+WAIT_For	appSelected.png	10
+WAIT	1.5
+DOUBLE_Click	appSelected.png
+WAIT	1.5
