@@ -1,0 +1,19 @@
+TEST_NAME	Verify Version iOS LANrev Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click 'More' Option
+DEVICE_Click	ios=UIATarget.localTarget().frontMostApp().mainWindow().tabBars()[0].buttons()[4]
+
+WAIT	0.5
+
+<DESC>	Click About
+DEVICE_Click	id=About
+
+WAIT	2
+<DESC>	Verify Version
+DEVICE_VERIFY_Text	ios=UIATarget.localTarget().frontMostApp().mainWindow().scrollViews()[0].webViews()[0].staticTexts()[2]	2204
+
+DEVICE_Quite

@@ -1,0 +1,27 @@
+TEST_NAME	Check Information Enterprise Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+DEVICE_Click	xpath=xpath=//UIACollectionCell[@name='Helpdesk_3.0.ipa']
+
+<DESC>	Wait Enterprise Application Detail is appeared
+DEVICE_WAIT_For_Text	xpath=//UIANavigationBar/UIAStaticText	Helpdesk_3.0.ipa	30
+
+<DESC>	Verify Short Description
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[@value='Short description']
+
+<DESC>	Verify Source
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[@value='Enterprise']
+
+<DESC>	Verify Category
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[@value='Utilities']
+
+<DESC>	Verify Version
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[@value='3.0']
+
+<DESC>	Verify Long Description
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIATextView[@value='Long description']
+
+DEVICE_Quite

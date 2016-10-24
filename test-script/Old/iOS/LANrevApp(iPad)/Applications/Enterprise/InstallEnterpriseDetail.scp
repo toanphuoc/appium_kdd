@@ -1,0 +1,21 @@
+TEST_NAME	Install Enterprise Application On-demand
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click button install
+DEVICE_Click	xpath=//UIATableCell[@name='Helpdesk_3.0.ipa']
+
+<DESC>	Wait Enterprise Application Detail is appeared
+DEVICE_WAIT_For_Text	xpath=//UIAWindow/UIAStaticText[1]	Helpdesk_3.0.ipa	30
+
+<DESC>	Click button 'Install'
+DEVICE_Click	xpath=//UIAWindow/UIAButton[@name='Install']
+DEVICE_WAIT_For_Text	xpath=//UIAWindow/UIAButton[@name='Installing...']	Installing...	20
+DEVICE_WAIT_For	xpath=//UIAWindow/UIAButton[@name='Install']	60
+
+<DESC>	Check application is installed?
+DEVICE_APP_IsInstalled	com.absolute.Helpdesk
+
+DEVICE_Quite

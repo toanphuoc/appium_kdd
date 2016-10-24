@@ -1,0 +1,19 @@
+TEST_NAME	Install All Enterprise Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+<DESC>	Click button 'Install All'
+DEVICE_WAIT_For_Text	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title'][1]	SpeedCar	20
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/header_button
+WAIT	2
+
+DEVICE_Click	xpath=//android.widget.Button[@text='Yes']
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/fragment_applications_empty_title	No Applications	120
+
+DEVICE_APP_IsInstalled	Game.NDK
+DEVICE_Uninstall	Game.NDK
+DEVICE_WAIT_For_Text	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title'][1]	SpeedCar	120
+
+DEVICE_Quite

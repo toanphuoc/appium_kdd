@@ -1,0 +1,16 @@
+TEST_NAME	Check Information iBooks
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Open Books Tab
+DEVICE_Click	xpath=//UIATabBar/UIAButton[@name='Books']
+
+<DESC>	Check Book Name
+DEVICE_VERIFY_Text	xpath=//UIATableCell[@name='Saving Wishes']/UIAStaticText[1]	Saving Wishes
+
+<DESC>	Check Book Short Description
+DEVICE_VERIFY_Text	xpath=//UIATableCell[@name='Saving Wishes']/UIAStaticText[2]	"Saving Wishes" by GJ Walker-Smith
+
+DEVICE_Quite

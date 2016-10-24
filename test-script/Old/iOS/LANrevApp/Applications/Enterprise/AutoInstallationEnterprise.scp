@@ -1,0 +1,16 @@
+TEST_NAME	Check Enterprise Applicaton has been asigned auto-install
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Check application is installed?
+DEVICE_APP_IsInstalled	com.heatsoftware.lanrevsafe.inhouse
+
+<DESC>	Remove LANrev Safe
+DEVICE_Uninstall	com.heatsoftware.lanrevsafe.inhouse
+
+DEVICE_WAIT_For_Install	com.heatsoftware.lanrevsafe.inhouse	200
+DEVICE_APP_IsInstalled	com.heatsoftware.lanrevsafe.inhouse
+
+DEVICE_Quite

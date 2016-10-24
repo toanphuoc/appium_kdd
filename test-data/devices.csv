@@ -1,0 +1,8 @@
+Device,OS Platform,UDID,Version,SerialNumber,URL Appium,Username,Password
+iPhone5,iOS,b1a391f2c9ac721844bce601bb78358f7f416a6b,9.3.1,DNPKD37ADTTN,http://174.16.10.45:4723/wd/hub,admin,123
+iPhone6,iOS,112f4ea9dc84bfd7b230f8824c3de306e71db72a,9.0.1,FK1NH8T4G5QG,http://174.16.10.45:4723/wd/hub,admin,123
+iPad Air 2,iOS,0dd498078368a62cfe3d981e3bca7f9569867c4e,9.3.2,DMPR36BEG5VT,http://174.16.10.45:4723/wd/hub,admin,123
+iPad Air,iOS,3e8c9affeb108702d2f585619aca4942646457f6,9.3.5,DLXLJ2CAF4YD,http://174.16.10.45:4723/wd/hub,admin,123
+Galaxy A3,Android,310020dedc512345,5.1.1,R58H443REVE,http://127.0.0.1:4723/wd/hub,admin,123
+Galaxy S6,Android,03157df3522e370e,6.0.1,R58G40EVN4N,http://127.0.0.1:4723/wd/hub,admin,123
+Nexus9,Android,HT4ANJT04188,6,HT51DWV00283,http://127.0.0.1:4723/wd/hub,admin,123

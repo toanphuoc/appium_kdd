@@ -1,0 +1,31 @@
+TEST_NAME	Remove On-demand Configuration Profile
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+DEVICE_Click	xpath=//android.widget.TextView[@text='Profiles']
+
+<DESC>	Check In Installed Profiles
+DEVICE_WAIT_For	xpath=//android.widget.LinearLayout[android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_available_item_title' and @text='DisableCamera']]/android.widget.LinearLayout/android.widget.ImageButton[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_installed_item_remove_button']	60
+
+<DESC>	Check information profile 'Disable Camera' is installed
+DEVICE_VERIFY_Text	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_available_item_title' and @text='DisableCamera']	DisableCamera
+	
+<DESC>	Remove Profile
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_available_item_title' and @text='DisableCamera']
+DEVICE_WAIT_For	id=com.heatsoftware.android.lanrevapps:id/installed_profiles_details_remove_button	30
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/installed_profiles_details_remove_button
+
+WAIT	2
+DEVICE_Click	xpath=//android.widget.Button[@text='Yes' and @resource-id='android:id/button1']
+
+<DESC>	Check in list 'Profile devices'
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/subtitle	Device Profiles	60
+
+<DESC>	Check Camera available after profile is removed
+DEVICE_START_Activity	com.sec.android.app.camera	.Camera
+WAIT	4
+DEVICE_VERIFY_CURRENT_Activity	.Camera
+
+DEVICE_Quite

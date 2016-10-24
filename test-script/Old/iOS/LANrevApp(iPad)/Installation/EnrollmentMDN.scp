@@ -1,0 +1,51 @@
+TEST_NAME	Enrollment to MDM
+TEST_ID	2121
+
+<DESC>	Install LANrev App
+DEVICE_INSTALL_App	<#iOS>iPad Air	/Users/Admin/Desktop/QA_MDMWINS_LANrev Apps_2.0_2046.ipa
+
+<DESC>	Enter value port
+DEVICE_SEND_Keys	xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIATextField[2]	443
+
+<DESC>	Enter username
+DEVICE_SEND_Keys	xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIATextField[3]	messi
+
+<DESC>	Enter password
+DEVICE_SEND_Keys	xpath=//UIAApplication[1]/UIAWindow[1]/UIAScrollView[1]/UIASecureTextField[1]	12345678x@X
+
+<DESC>	Enter value domain
+DEVICE_SEND_Keys	xpath=//UIAWindow[1]/UIAScrollView[1]/UIATextField[4]	s3corp
+
+<DESC>	Click button 'Next'
+DEVICE_Click	xpath=//UIAWindow[1]/UIANavigationBar[1]/UIAButton[2]
+
+<DESC>	Wait for element iPad Air 2
+DEVICE_WAIT_For_Text	xpath=//UIAWindow[1]/UIATableView/UIATableCell[@name='Ipad Air']/UIAStaticText[@name='Ipad Air']	Ipad Air	60
+
+<DESC>	Select My Device
+DEVICE_Click	xpath=//UIATableCell[@name='Ipad Air']
+
+<DESC>	Click Button 'Next'
+DEVICE_Click	xpath=//UIAWindow[1]/UIANavigationBar[1]/UIAButton[3]
+
+<DESC>	Wait For Pop-up appears
+DEVICE_WAIT_For	xpath=//UIAApplication[1]/UIAWindow[6]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]/UIAButton[1]	90
+
+<DESC>	Click Button 'OK' On Pop-up
+DEVICE_Click	ios=UIATarget.localTarget().frontMostApp().mainWindow().elements()[0].collectionViews()[0].cells()[1].buttons()[0]
+
+<DESC>	Enter passphrase
+DEVICE_SEND_Keys	xpath=//UIAWindow[1]/UIASecureTextField[1]	q
+
+<DESC>	Verify Passphrase
+DEVICE_SEND_Keys	xpath=//UIAWindow[1]/UIASecureTextField[2]	q
+
+<DESC>	Click Button 'OK'
+DEVICE_Click	xpath=//UIANavigationBar/UIAButton[@name='OK']
+
+<DESC>	Allow
+DEVICE_WAIT_For	xpath=//UIAWindow[6]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]	90
+DEVICE_Click	xpath=//UIAWindow[6]/UIAAlert[1]/UIACollectionView[1]/UIACollectionCell[2]
+
+<DESC>	Close connection
+DEVICE_Quite

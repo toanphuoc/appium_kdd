@@ -1,0 +1,8 @@
+TEST_NAME	Enrollment to MDM
+TEST_ID	2121
+
+<DESC>	Install LANrev App
+DEVICE_INSTALL_App	<#iOS>iPhone5	/Users/Admin/Desktop/LANrev Safe_adhoc.ipa
+
+<DESC>	Close connection
+DEVICE_Quite

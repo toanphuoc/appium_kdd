@@ -1,0 +1,25 @@
+TEST_NAME	View AppStore In Detail
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Goto AppStore Detail
+DEVICE_Click	xpath=//UIACollectionCell[contains(@name, 'Watch live TV and')]
+
+
+<DESC>	Wait AppStore Application Detail is appeared
+DEVICE_WAIT_For_Text	xpath=//UIANavigationBar/UIAStaticText	ABC – Watch live TV and stream full episodes! (formerly WATCH ABC)	30
+
+<DESC>	Click Install
+DEVICE_Click	xpath=//UIANavigationBar/UIAButton[@name='Install']
+
+<DESC>	Select View AppStore Option
+DEVICE_WAIT_For	xpath=//UIACollectionCell[@name='View in App Store']/UIAButton[@name='View in App Store']	60
+DEVICE_Click	xpath=//UIACollectionCell[@name='View in App Store']/UIAButton[@name='View in App Store']
+
+<DESC>	Wait For AppStore Open
+DEVICE_WAIT_For	xpath=//UIACollectionCell[@name='ABC – Watch live TV and stream full episodes! (formerly WATCH ABC)']/UIAButton[@label='GET' or @name='PurchaseButton']	60
+DEVICE_VERIFY_Text	xpath=//UIACollectionCell[@name='ABC – Watch live TV and stream full episodes! (formerly WATCH ABC)']/UIAElement[1]	ABC – Watch live TV and stream full episodes! (formerly WATCH ABC)
+
+DEVICE_Quite

@@ -1,0 +1,13 @@
+TEST_NAME	Check Information Profile
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Open Books Tab
+DEVICE_Click	xpath=//UIATabBar/UIAButton[@name='Profiles']
+
+<DESC>	Check name
+DEVICE_VERIFY_Text	xpath=//UIACollectionCell[@name='ios-nocam-auto']/UIAStaticText[1]	ios-nocam-auto
+
+DEVICE_Quite

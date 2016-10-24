@@ -1,0 +1,14 @@
+TEST_NAME	Verify Version iOS LANrev Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click About
+DEVICE_Click	id=About
+
+WAIT	2
+<DESC>	Verify Version
+DEVICE_VERIFY_Text	ios=UIATarget.localTarget().frontMostApp().mainWindow().scrollViews()[0].webViews()[0].staticTexts()[2]	2046
+
+DEVICE_Quite

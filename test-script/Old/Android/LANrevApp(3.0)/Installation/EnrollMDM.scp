@@ -1,0 +1,87 @@
+TEST_NAME	Enrollment to MDM
+TEST_ID	2121
+
+<DESC>	Install LANrev App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	Chrome
+
+<DESC>	Open url https://mdm33.s3corp.com.vn/profile/enrollment.mdm
+DEVICE_OPEN_Url	https://mdm33.s3corp.com.vn/profile/enrollment.mdm
+WAIT	1
+
+<DESC>	Select Device Vendor
+DEVICE_Select	id=devicevendor	Samsung
+WAIT	1
+
+<DESC>	Enter username
+DEVICE_SEND_Keys	id=Username	ronaldo
+WAIT	1
+
+<DESC>	Enter password
+DEVICE_SEND_Keys	id=Password	12345678x@X
+WAIT	1
+
+<DESC>	Enter domain
+DEVICE_SEND_Keys	id=Domain	s3corp
+WAIT	1
+
+<DESC>	Select option 'This is a company device'
+DEVICE_Click	id=personalDevice
+WAIT	1
+
+<DESC>	Click 'Continue' button
+DEVICE_Click	xpath=//button[@class='btn-login']
+WAIT	1
+
+DEVICE_SWITCH_Context	NATIVE_APP
+
+<DESC>	Save password
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='Save']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='Save']
+
+<DESC>	Save .apk file
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+<DESC>	Open notification
+DEVICE_OPEN_Notification
+
+<DESC>	Select LANrev App and install it
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@resource-id='android:id/text' and contains(@text, 'Download complete') and position()=1]	90
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and contains(@text, 'LANrevApps') and position()=1]
+
+<DESC>	Click button 'Install'
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='Install']	30
+DEVICE_Click	id=com.android.packageinstaller:id/ok_button
+
+<DESC>	Wait installing is finished
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='Open']	90
+DEVICE_Click	id=com.android.packageinstaller:id/launch_button
+
+<DESC>	Enter Server Address
+DEVICE_WAIT_For	id=com.heatsoftware.android.lanrevapps:id/enroll_device_server_address_input	90
+DEVICE_SEND_Keys	id=com.heatsoftware.android.lanrevapps:id/enroll_device_server_address_input	mdm33.s3corp.com.vn
+WAIT	1
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/enroll_device_save_button
+
+<DESC>	Enter passcode value
+DEVICE_WAIT_For	id=com.heatsoftware.android.lanrevapps:id/passcode_input1	60
+DEVICE_SEND_Keys	id=com.heatsoftware.android.lanrevapps:id/passcode_input1	1234
+WAIT	1
+DEVICE_SEND_Keys	id=com.heatsoftware.android.lanrevapps:id/passcode_input2	1234
+WAIT	1
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/passcode_save_button
+
+<DESC>	Active Device administrator
+DEVICE_WAIT_For_Text	id=com.android.settings:id/admin_name	LANrev Apps	30
+DEVICE_Click	id=com.android.settings:id/action_button
+
+<DESC>	Verify App Version, UDID, copyright
+DEVICE_WAIT_For	id=com.heatsoftware.android.lanrevapps:id/action_about	30
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/action_about
+DEVICE_WAIT_For	xpath=//android.view.View[@content-desc='HEAT Software']	30
+DEVICE_VERIFY_Element	xpath=//android.view.View[@content-desc='Version 3.0b1 (5050)']
+DEVICE_VERIFY_Element	xpath=//android.view.View[contains(@content-desc, '359937061307245')]
+DEVICE_VERIFY_Element	xpath=//android.view.View[contains(@content-desc, '© 2011–2016') and contains(@content-desc, '© 2011–2016 FrontRange Solutions Inc. All rights reserved.')]
+
+<DESC>	Close connection
+DEVICE_Quite

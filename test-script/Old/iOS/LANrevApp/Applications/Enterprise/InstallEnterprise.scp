@@ -1,0 +1,17 @@
+TEST_NAME	Installation Enterprise Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click button install
+DEVICE_Click	xpath=//UIACollectionCell[@name='Helpdesk_3.0.ipa']/UIAButton[1]
+ 
+WAIT	5
+ 
+DEVICE_WAIT_ForVanish	xpath=//UIACollectionCell[@name='Helpdesk_3.0.ipa']	200
+
+<DESC>	Check application is installed?
+DEVICE_APP_IsInstalled	com.absolute.Helpdesk
+
+DEVICE_Quite

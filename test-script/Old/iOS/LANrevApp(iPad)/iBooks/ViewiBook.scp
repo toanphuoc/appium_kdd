@@ -1,0 +1,17 @@
+TEST_NAME	View iBook Store
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Open Books Tab
+DEVICE_Click	xpath=//UIATabBar/UIAButton[@name='Books']
+
+DEVICE_Click	xpath=//UIATableCell[@name='Saving Wishes']/UIAButton[@name='Install']
+
+<DESC>	Wait For Screen iBook Store appears
+DEVICE_WAIT_For	xpath=//UIAButton[@name='PurchaseButton']	120
+
+DEVICE_WAIT_For_Text	xpath=//UIAElement[@name='OverlayCaptureView']/UIACollectionView/UIACollectionCell/UIAElement[@name='Saving Wishes']	Saving Wishes	60
+
+DEVICE_Quite

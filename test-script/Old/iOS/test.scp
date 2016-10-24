@@ -1,0 +1,9 @@
+TEST_NAME	Check Information Enterprise Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	iPhone5	com.absolute.AbsoluteAppsQA
+
+WAIT	20
+
+DEVICE_Quite

@@ -1,0 +1,21 @@
+TEST_NAME	Install Enterprise Application On-demand
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click button install
+DEVICE_Click	xpath=//UIACollectionCell[@name='Helpdesk_3.0.ipa']
+
+<DESC>	Wait Enterprise Application Detail is appeared
+DEVICE_WAIT_For_Text	xpath=//UIANavigationBar/UIAStaticText	Helpdesk_3.0.ipa	30
+
+<DESC>	Click button 'Install'
+DEVICE_Click	xpath=//UIAButton[@name='Install']
+DEVICE_WAIT_For_Text	xpath=//UIAButton[@name='Installing...']	Installing...	20
+DEVICE_WAIT_For	xpath=//UIAButton[@name='Install']	120
+
+<DESC>	Check application is installed?
+DEVICE_APP_IsInstalled	com.absolute.Helpdesk
+
+DEVICE_Quite

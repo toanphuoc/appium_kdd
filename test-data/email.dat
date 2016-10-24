@@ -1,0 +1,10 @@
+<!-- Store Data About Email -->
+email.from=lanrev-auto@s3corp.com.vn
+email.password=12345678@X
+email.to=am-automation@s3corp.com.vn
+email.host=mail.s3corp.com.vn
+email.port=578
+
+email.subject=Automation report for Application On Mobile Device
+email.content.app=LANrev Apps 2203
+email.content.mdm=mdm33.s3corp.com.vn (5638)

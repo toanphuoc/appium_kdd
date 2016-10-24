@@ -1,0 +1,15 @@
+TEST_NAME	Check Messages Contents
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+<DESC>	Click on Messages Tab
+DEVICE_Click	xpath=//android.widget.TextView[@text='Profiles']
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@text='Messages']	10
+DEVICE_Click	xpath=//android.widget.TextView[@text='Messages']
+
+<DESC>	Check Messages Contents
+DEVICE_COUNT_Element	xpath=//android.widget.LinearLayout[@resource-id='com.heatsoftware.android.lanrevapps:id/messages_item_content_layout']/android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/messages_item_text' and @text='Hello world']	2
+
+DEVICE_Quite

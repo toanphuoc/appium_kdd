@@ -1,0 +1,21 @@
+TEST_NAME	Check Information Google Play Application Detail
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+<DESC>	Click on Google Play Tab
+DEVICE_Click	xpath=//android.widget.TextView[@text='Google Play']
+
+<DESC>	Check Google Play Information is as name, short description
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title	My Talking Angela	30
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title
+
+<DESC>	Verify name, Category, Short description, Long description
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/market_application_details_title	My Talking Angela	30
+DEVICE_VERIFY_Text	id=com.heatsoftware.android.lanrevapps:id/market_application_details_category_info	Category: Games
+DEVICE_VERIFY_Text	id=com.heatsoftware.android.lanrevapps:id/market_application_details_short_description	Welcome to the glamorous...
+DEVICE_VERIFY_Text	id=com.heatsoftware.android.lanrevapps:id/market_application_details_description	Welcome to the glamorous world of My Talking Angela!
+
+
+DEVICE_Quite

@@ -1,0 +1,13 @@
+TEST_NAME	Check Message
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click Message
+DEVICE_Click	id=Messages
+
+DEVICE_WAIT_For_Text	xpath=//UIATextView[@value='Hello world']	Hello world	60
+
+DEVICE_COUNT_Element	xpath=//UIATextView[@value='Hello world']	2
+DEVICE_Quite

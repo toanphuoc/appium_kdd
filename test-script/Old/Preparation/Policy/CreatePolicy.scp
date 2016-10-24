@@ -1,0 +1,70 @@
+TEST_NAME	Create Smart Policy
+TEST_ID	2121
+
+OPEN_App	C:\Program Files\Pole Position Software\LANrevAdmin\LANrev Admin.exe
+
+<DESC>	Wait window login is show
+WAIT_For	quite.png	30
+
+<DESC>	Enter Server Address
+KEY	<#Key>TAB	4
+KEY	180.16.10.33
+
+<DESC>	Enter password
+KEY	<#Key>TAB	4
+KEY	admin
+
+<DESC>	Press Enter
+KEY	<#Key>ENTER
+
+<DESC>	Wait for main windows LANrev Admin apprea
+WAIT_For	window.png	20
+
+<DESC>	Open Device Management
+KEY_Combine	<#Key>CTRL+SHIFT+M
+
+<DESC>	Wait 'Mobile Devices' window is appeared
+WAIT_For	mobile_devices.png	30
+
+<DESC>	Check Survival of Policies
+KEY	<#Key>HOME
+WAIT	1
+KEY	<#Key>LEFT
+WAIT	1
+
+CLICK	policies.png
+WAIT	1
+CLICK	searchAgent.png
+WAIT	1
+KEY	Auto Group
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+BREAK_Progress	appSelected.png
+
+<DESC>	Create New Policy
+RIGHT_Click	600	300
+WAIT	2
+KEY	<#Key>DOWN	5
+WAIT	1
+KEY	<#Key>ENTER
+WAIT_For	btCancel.PNG	30
+
+<DESC>	Enter Policy Name
+KEY	Auto Group
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+PASTE	Mobile Device Identifier (UDID)
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+PASTE	b1a391f2c9ac721844bce601bb78358f7f416a6b
+WAIT	1
+CLICK	ok.png
+WAIT_ForVanish	ok.png	30
+
+CLOSE_App	C:\Program Files\Pole Position Software\LANrevAdmin\LANrev Admin.exe

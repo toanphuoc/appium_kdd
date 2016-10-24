@@ -1,0 +1,28 @@
+TEST_NAME	Installation Profile Available In Profile Detail
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+DEVICE_Click	xpath=//android.widget.TextView[@text='Profiles']
+
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/profiles_available_item_title	DisableCamera	30
+
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/profiles_available_item_title	DisableCamera
+
+<DESC>	Click button 'Install Profile'
+DEVICE_WAIT_For	id=com.heatsoftware.android.lanrevapps:id/available_profiles_details_remove_button	60
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/available_profiles_details_remove_button
+
+<DESC>	Wait Profile is installed completely 
+DEVICE_WAIT_For	xpath=//android.widget.LinearLayout[android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_available_item_title' and @text='DisableCamera']]/android.widget.LinearLayout/android.widget.ImageButton[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_installed_item_remove_button']	60
+
+<DESC>	Check Camera available after profile is installed
+DEVICE_START_Activity	com.sec.android.app.camera	.Camera
+WAIT	3
+
+<DESC>	Check In Installed List
+DEVICE_WAIT_For_Text	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_available_item_title' and @text='DisableCamera']	DisableCamera	90
+DEVICE_VERIFY_Text	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/profiles_available_item_description' and @text='Disable camera']	Disable camera
+
+DEVICE_Quite

@@ -1,0 +1,16 @@
+TEST_NAME	Check Enterprise Application is installed automation
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+DEVICE_APP_IsInstalled	com.foxfi
+
+DEVICE_Uninstall	com.foxfi
+
+DEVICE_WAIT_For_Install	com.foxfi	90
+
+DEVICE_APP_IsInstalled	com.foxfi
+
+<DESC>	Close connection appium
+DEVICE_Quite

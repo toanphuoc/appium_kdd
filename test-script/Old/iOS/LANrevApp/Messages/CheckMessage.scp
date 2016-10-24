@@ -1,0 +1,18 @@
+TEST_NAME	Check Message
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Click 'More' Option
+DEVICE_Click	ios=UIATarget.localTarget().frontMostApp().mainWindow().tabBars()[0].buttons()[4]
+
+WAIT	0.5
+
+<DESC>	Click Message
+DEVICE_Click	id=Messages
+
+DEVICE_WAIT_For_Text	xpath=//UIATextView[@value='Hello world']	Hello world	60
+
+DEVICE_COUNT_Element	xpath=//UIATextView[@value='Hello world']	2
+DEVICE_Quite

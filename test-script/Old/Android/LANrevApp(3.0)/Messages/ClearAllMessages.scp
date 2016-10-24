@@ -1,0 +1,20 @@
+TEST_NAME	Clear All Messages
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+<DESC>	Click on Messages Tab
+DEVICE_Click	xpath=//android.widget.TextView[@text='Profiles']
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@text='Messages']	10
+DEVICE_Click	xpath=//android.widget.TextView[@text='Messages']
+
+<DESC>	Delete All Message
+DEVICE_Click	id=com.heatsoftware.android.lanrevapps:id/messages_clear_all_button
+DEVICE_Click	xpath=//android.widget.Button[@text='Yes']
+WAIT	1
+
+<DESC>	Check Messages Contents
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/fragment_applications_empty_title	No Messages	30
+
+DEVICE_Quite

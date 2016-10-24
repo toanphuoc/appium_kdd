@@ -1,0 +1,13 @@
+TEST_NAME	Check Information AppStore Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Check AppStore Application Name
+DEVICE_VERIFY_Text	xpath=//UIATableCell[contains(@name, 'Watch live TV and')]/UIAStaticText[contains(@name, 'Watch live TV and stream full episodes! (formerly WATCH ABC)') and position()=1]	Watch live TV and stream full episodes! (formerly WATCH ABC)
+
+<DESC>	Check AppStore Application Short Description
+DEVICE_VERIFY_Text	xpath=//UIATableCell[contains(@name, 'Watch live TV and')]/UIAStaticText[contains(@name, 'Watch live TV and stream full episodes! (formerly WATCH ABC)') and position()=2]	Watch live TV and stream full episodes! (formerly WATCH ABC)
+
+DEVICE_Quite

@@ -1,0 +1,83 @@
+TEST_NAME	Assign On-Demand Profile Disable Restrictions Smart Group
+TEST_ID	2121
+
+OPEN_App	C:\Program Files\Pole Position Software\LANrevAdmin\LANrev Admin.exe
+
+<DESC>	Wait window login is show
+WAIT_For	quite.png	30
+
+<DESC>	Enter Server Address
+KEY	<#Key>TAB	4
+KEY	180.16.10.33
+
+<DESC>	Enter password
+KEY	<#Key>TAB	4
+KEY	admin
+
+<DESC>	Press Enter
+KEY	<#Key>ENTER
+
+<DESC>	Wait for main windows LANrev Admin apprea
+WAIT_For	window.png	20
+
+<DESC>	Open Device Management
+KEY_Combine	<#Key>CTRL+SHIFT+M
+
+<DESC>	Wait 'Mobile Devices' window is appeared
+WAIT_For	mobile_devices.png	30
+
+<DESC>	Check Survival of Profiles
+KEY	<#Key>HOME
+WAIT	1
+KEY	<#Key>LEFT
+WAIT	1
+
+CLICK	policies.png
+WAIT	1
+KEY	<#Key>LEFT
+WAIT	1
+KEY	<#Key>RIGHT
+WAIT	1
+
+CLICK	auto_group.png
+WAIT	1
+KEY	<#Key>RIGHT
+WAIT	1
+KEY	<#Key>DOWN	3
+WAIT	1
+KEY	<#Key>RIGHT
+WAIT	1
+
+CLICK	configuration_profiles.png
+WAIT	1
+CLICK	searchAgent.png
+WAIT	1
+KEY	ios-nocam-auto
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+
+<DESC>	Drag Drop Profile to On-demand
+DRAG_Drop	appSelected.png	on_demand.png
+WAIT	1
+
+<DESC>	Check result after assign
+CLICK	on_demand.png
+WAIT	1
+CLICK	searchAgent.png
+WAIT	1
+KEY	ios-nocam-auto
+WAIT	1
+KEY	<#Key>ENTER
+WAIT	1
+KEY	<#Key>TAB	2
+WAIT	1
+KEY	<#Key>DOWN
+WAIT	1
+VERIFY_Image	appSelected.png
+WAIT	1
+
+CLOSE_App	C:\Program Files\Pole Position Software\LANrevAdmin\LANrev Admin.exe

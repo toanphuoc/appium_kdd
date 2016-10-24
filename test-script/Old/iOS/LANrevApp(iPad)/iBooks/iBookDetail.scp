@@ -1,0 +1,28 @@
+﻿TEST_NAME	Check Information iBooks In iBooks Detail
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Open Books Tab
+DEVICE_Click	xpath=//UIATabBar/UIAButton[@name='Books']
+
+<DESC>	Check Book Name
+DEVICE_Click	xpath=//UIATableCell[@name='Saving Wishes']
+
+<DESC>	Wait iBook Detail appears
+DEVICE_WAIT_For_Text	xpath=//UIAWindow/UIAStaticText[@name='Saving Wishes' and position()=1]	Saving Wishes	30
+
+<DESC>	Check iBook Name
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[@name='Saving Wishes' and position()=1]
+
+<DESC>	Check Short Description
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[contains(@name, '"Saving Wishes" by GJ Walker-Smith') and position()=2]
+
+<DESC>	Check Category
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[@name='Romance']
+
+<DESC>	Check Long Description
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIATextView[contains(@name, 'For Charli Blake, being seventeen is a tough gig.') and contains(@name, 'Her lifelong dream of travelling the world is just months away from becoming reality. All she has to do is ride out the last few months of high school, which is easier said than done thanks to a trio of mean girls known as The Beautifuls.')]
+
+DEVICE_Quite

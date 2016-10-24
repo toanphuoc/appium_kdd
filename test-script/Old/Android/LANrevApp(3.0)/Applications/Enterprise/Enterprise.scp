@@ -1,0 +1,11 @@
+TEST_NAME	Check Information Enterprise Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+<DESC>	Check Enterprise Application Information
+DEVICE_WAIT_For_Text	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title'][1]	SpeedCar	20
+DEVICE_VERIFY_Text	id=com.heatsoftware.android.lanrevapps:id/fragment_applications_item_description	Short description
+
+DEVICE_Quite

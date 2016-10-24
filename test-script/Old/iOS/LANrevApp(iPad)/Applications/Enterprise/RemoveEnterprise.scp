@@ -1,0 +1,16 @@
+TEST_NAME	Remove Enterprise Application has been assigned On-Demand
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPad Air	com.absolute.AbsoluteAppsQA
+
+<DESC>	Uninstall Helpdesk Application
+DEVICE_Uninstall	com.absolute.Helpdesk
+
+<DESC>	Wait for Application Tab is refreshed
+DEVICE_WAIT_For	xpath=//UIATableCell[@name='Helpdesk_3.0.ipa']	200
+
+<DESC>	Check application is installed?
+DEVICE_APP_IsInstalled	com.absolute.Helpdesk	false
+
+DEVICE_Quite

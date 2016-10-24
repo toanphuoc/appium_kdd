@@ -1,0 +1,17 @@
+TEST_NAME	View iBook Store
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Open Books Tab
+DEVICE_Click	xpath=//UIATabBar/UIAButton[@name='Books']
+
+DEVICE_Click	xpath=//UIACollectionCell[@name='Saving Wishes']/UIAButton[@name='Install']
+
+<DESC>	Wait For Screen iBook Store appears
+DEVICE_WAIT_For	xpath=//UIAApplication[1]/UIAWindow[2]/UIACollectionView[1]/UIACollectionCell[1]/UIAButton[@name='PurchaseButton']	120
+
+DEVICE_WAIT_For_Text	ios=UIATarget.localTarget().frontMostApp().mainWindow().collectionViews()[0].cells()[0].elements()[0]	Saving Wishes	60
+
+DEVICE_Quite

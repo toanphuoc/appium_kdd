@@ -1,0 +1,32 @@
+﻿TEST_NAME	Check Information AppStore Application In Detail
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Check AppStore Application Name
+DEVICE_WAIT_For	xpath=//UIACollectionCell[contains(@name, 'Watch live TV and')]	30
+DEVICE_Click	xpath=//UIACollectionCell[contains(@name, 'Watch live TV and')]
+
+<DESC>	Wait AppStore Application Detail is appeared
+DEVICE_WAIT_For_Text	xpath=//UIANavigationBar/UIAStaticText	ABC – Watch live TV and stream full episodes! (formerly WATCH ABC)	30
+
+<DESC>	Verify Name
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[contains(@value, 'Watch live TV')][1]
+
+<DESC>	Verify Short Description
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[contains(@value, 'Watch live TV')]
+
+<DESC>	Verify Source
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[contains(@value, 'App Store')]
+
+<DESC>	Verify Category
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[contains(@value, 'Entertainment')]
+
+<DESC>	Verify Version
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIAStaticText[contains(@value, '5.0.4')]
+
+<DESC>	Verify Long Description
+DEVICE_VERIFY_Element	xpath=//UIAWindow/UIATextView[contains(@value, 'The Bachelor. Modern Family. Scandal.') and contains(@value, 'This app features Nielsen’s proprietary measurement software, which will allow you to contribute to market research, like Nielsen’s TV Ratings.')]
+
+DEVICE_Quite

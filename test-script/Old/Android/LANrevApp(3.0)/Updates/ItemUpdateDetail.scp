@@ -1,0 +1,20 @@
+TEST_NAME	Check Information Update Application Item In Detail
+TEST_ID	213
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.heatsoftware.android.lanrevapps	com.absoluteapps.Launcher	com.absolute.absoluteapps.ui.MainActivity
+
+<DESC>	Check on device
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/fragment_applications_empty_title	No Applications	120
+DEVICE_Click	xpath=//android.widget.TextView[@text='Updates']
+
+<DESC>	Check Item Update
+DEVICE_WAIT_For	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title' and @text='SpeedCar']	60
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='com.heatsoftware.android.lanrevapps:id/fragment_applications_item_title' and @text='SpeedCar']
+
+<DESC>	Check Item Update Detail
+DEVICE_WAIT_For_Text	id=com.heatsoftware.android.lanrevapps:id/application_details_title	SpeedCar	30
+DEVICE_VERIFY_Text	id=com.heatsoftware.android.lanrevapps:id/application_details_short_description	Short description
+DEVICE_VERIFY_Text	id=com.heatsoftware.android.lanrevapps:id/application_details_version_info	Version 1.2.5
+
+DEVICE_Quite

@@ -1,0 +1,13 @@
+TEST_NAME	Check Information AppStore Application
+TEST_ID	2121
+
+<DESC>	Launch App
+DEVICE_LAUNCH_App	<#iOS>iPhone5	com.absolute.AbsoluteAppsQA
+
+<DESC>	Check AppStore Application Name
+DEVICE_VERIFY_Text	xpath=//UIACollectionCell[contains(@name, 'Watch live TV and')]/UIAStaticText[contains(@name, 'Watch live TV and stream full episodes! (formerly WATCH ABC)') and position()=1]	Watch live TV and stream full episodes! (formerly WATCH ABC)
+
+<DESC>	Check AppStore Application Category
+DEVICE_VERIFY_Text	xpath=//UIACollectionCell[contains(@name, 'Watch live TV and')]/UIAStaticText[contains(@name, 'Entertainment') and position()=2]	Entertainment
+
+DEVICE_Quite

@@ -1,0 +1,71 @@
+TEST_NAME	Uninstall LANrev Application
+TEST_ID	4324
+
+DEVICE_LAUNCH_App	<#Android>Galaxy S6	com.android.settings	DeviceAdminSettings
+
+<DESC>	Deactive LANrev Apps
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps']
+DEVICE_WAIT_For	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']	30
+DEVICE_Click	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']
+
+WAIT	1.5
+
+<DESC>	Deactive LANrev Apps - Generic Module
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps - Generic Module']
+DEVICE_WAIT_For	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']	30
+DEVICE_Click	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']
+
+WAIT	1.5
+
+<DESC>	Deactive LANrev Apps - Samsung Support
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps - Samsung Support']
+DEVICE_WAIT_For	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']	30
+DEVICE_Click	xpath=//android.widget.Button[@resource-id='com.android.settings:id/action_button' and @text='Deactivate']
+
+WAIT	1.5
+
+<DESC>	Application Managements
+DEVICE_START_Activity	com.android.settings	.ManageApplications
+WAIT	3
+
+<DESC>	Uninstall Install LANrev Apps
+DEVICE_Scroll	LANrev Apps
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+<DESC>	Uninstall Install LANrev Apps - Generic Module
+DEVICE_Scroll	LANrev Apps - Generic Module
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps - Generic Module']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+<DESC>	Uninstall Install LANrev Apps - GeoLocation
+DEVICE_Scroll	LANrev Apps - GeoLocation
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps - GeoLocation']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+<DESC>	Uninstall Install LANrev Apps - Samsung Support
+DEVICE_Scroll	LANrev Apps - Samsung Support
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps - Samsung Support']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+<DESC>	Uninstall Install LANrev Apps Sentinel
+DEVICE_Scroll	LANrev Apps Sentinel
+DEVICE_Click	xpath=//android.widget.TextView[@resource-id='android:id/title' and @text='LANrev Apps Sentinel']
+DEVICE_WAIT_For	id=com.android.settings:id/left_button	30
+DEVICE_Click	id=com.android.settings:id/left_button
+DEVICE_WAIT_For	xpath=//android.widget.Button[@text='OK']	30
+DEVICE_Click	xpath=//android.widget.Button[@text='OK']
+
+DEVICE_Quite
